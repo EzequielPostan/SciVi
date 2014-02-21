@@ -1,0 +1,41 @@
+SciVi (Scientific Virus) es un virus que infecta archivos ELF en GNU/Linux. Este se infecta sólo los archivos ejecutables de la misma carpeta copiándose (si hay padding suficiente) en estos, permitiendo que transmitan el virus y además deja una firma que se ve al ejecutarse un programa infectado (ver ejemplo de uso).
+
+Autores
+Ezequiel Postan
+Manuel Pajón
+
+NOTA: Este proyecto tiene fines puramente educativos. Fue un proyecto final de la asignatura Arquitectura del Computador.
+
+Compilar con:
+   as NombreDelArchivo.s -o scivi.o
+   ld scivi.o -o SciVi
+
+Si todo anda bien, debería suceder esto:
+   $ ./scivi 
+   Hola, mi nombre es SciVi. Soy un virus informático y vivo en este archivo
+   Infección Exitosa
+
+Ejemplo de uso
+
+Tomemos el simple Holle World
+   #include <stdio.h>
+   
+   int main()
+   {
+       printf("Hello World!!\n");
+       return 0;
+   }
+
+Compilemos con gcc hola.c -o rata
+   $ ./rata 
+   Hello World!!
+
+Si ahora corremos el virus (teniendo a rata en la misma carpeta que SciVi)
+   $ ./scivi 
+   Hola, mi nombre es SciVi. Soy un virus informático y vivo en este archivo
+   Infección Exitosa
+
+Y vemos que ahora rata está infectado
+   $ ./rata 
+   Hola, mi nombre es SciVi. Soy un virus informático y vivo en este archivo
+   Hello World!!
