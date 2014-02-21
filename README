@@ -1,4 +1,4 @@
-SciVi (Scientific Virus) es un virus que infecta archivos ELF en GNU/Linux. Este se infecta sólo los archivos ejecutables de la misma carpeta copiándose (si hay padding suficiente) en estos, permitiendo que transmitan el virus y además deja una firma que se ve al ejecutarse un programa infectado (ver ejemplo de uso).
+SciVi (Scientific Virus) es un virus que infecta archivos ELF en GNU/Linux (32 bits). Este se infecta sólo los archivos ejecutables de la misma carpeta copiándose (si hay padding suficiente) en estos, permitiendo que transmitan el virus y además deja una firma que se ve al ejecutarse un programa infectado (ver ejemplo de uso).
 
 Autores
 Ezequiel Postan
